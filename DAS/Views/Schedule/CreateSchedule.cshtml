@@ -1,0 +1,126 @@
+﻿@model DAS.Models.ViewModel.ScheduleVM
+
+@{
+    ViewBag.Title = "CreateSchedule";
+    Layout = "~/Views/Shared/_Layout_Doctor.cshtml";
+}
+
+<h2>CreateSchedule</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>ScheduleVM</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChamberID, htmlAttributes: new { @class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.DropDownList("ChamberID", null, "Select Chamber", htmlAttributes: new { @class = "form-control",id="chamberId" })
+                @Html.ValidationMessageFor(model => model.ChamberID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control",id="starttime" } })
+                @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EndTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EndTime, new { htmlAttributes = new { @class = "form-control",id="endtime" } })
+                @Html.ValidationMessageFor(model => model.EndTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstAppointmentFee, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FirstAppointmentFee, new { htmlAttributes = new { @class = "form-control",id="firstfee" } })
+                @Html.ValidationMessageFor(model => model.FirstAppointmentFee, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NextMeetingFee, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NextMeetingFee, new { htmlAttributes = new { @class = "form-control" ,id="nextfee"} })
+                @Html.ValidationMessageFor(model => model.NextMeetingFee, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Select Days</label>
+            <div class="col-md-4">
+                <select class="form-control" id="select">
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                </select>
+            </div>
+            <button class="col-md-1" type="button" style="margin-right:0px;" onclick="selectDays()">Select</button>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" onclick="save()" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        var obj = {
+            ChamberID: "",
+            StartTime: "",
+            EndTime: "",
+            FirstAppointmentFee: "",
+            NextMeetingFee: "",
+            days:[]
+        }
+        function selectDays() {
+            var x = document.getElementById("select").value;
+            obj.days.push(x);
+            console.log(obj);
+        }
+        function save() {
+            obj.ChamberID = document.getElementById("chamberId").value;
+            obj.StartTime = document.getElementById("starttime").value;
+            obj.EndTime = document.getElementById("endtime").value;
+            obj.FirstAppointmentFee = document.getElementById("firstfee").value;
+            obj.NextMeetingFee = document.getElementById("nextfee").value;
+            console.log(obj);
+            $.ajax({
+                url: '@Url.Action("CreateSchedule","Schedule")',
+                method: "POST",
+                data: { model: obj },
+                success: function (data) {
+                    window.location.href = data;
+                }
+            });
+
+        }
+
+    </script>
+
+
+
+
+
+}

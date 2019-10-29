@@ -1,0 +1,64 @@
+﻿@model IEnumerable<DAS.Models.ViewModel.DoctorList>
+
+@{
+    ViewBag.Title = "DoctorList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DoctorList</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Doctor Name
+        </th>
+        <th>
+            Designation
+        </th>
+        <th>
+            Doctor Specification
+        </th>
+        <th>
+            Hospital Name
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            Area
+        </th>
+        <th>
+            Fee
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorDesignation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorSpec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HospitalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChamberCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChamberArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fee)
+            </td>
+
+        </tr>
+    }
+
+</table>
