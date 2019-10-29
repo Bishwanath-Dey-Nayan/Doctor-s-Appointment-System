@@ -16,7 +16,7 @@ namespace DAS.Controllers
         {
 
             ViewBag.CityId = new SelectList(db.Cities, "Id", "Name");
-            return View();
+            return View(); 
         }
 
         public JsonResult Getddl_Data(string filterdata)
