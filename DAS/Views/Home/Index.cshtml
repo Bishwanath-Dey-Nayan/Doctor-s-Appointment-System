@@ -1,53 +1,85 @@
 ﻿@model DAS.Models.ViewModel.SearchParam
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+                /**/
+
+                ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("SearchParam", "Home", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
 
-    <div class="form-inline">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group col-md-3">
-            @Html.DropDownList("CityId", null, "Select City", htmlAttributes: new { @class = "form-control col-md-12", id = "chamberId" })
-            @Html.ValidationMessageFor(model => model.CityId, "", new { @class = "text-danger" })
+    <section class="header">
+        <div class="container">
+            <div class="logo">
+                @*<a href="index.html"><img src="images/logo.png" alt="logo"></a>*@
+                <img src="~/Content/Image/logo.png" alt="logo" />
+            </div>
+            <div class="login">
+                <div class="signupButton">
+
+                    <a href="#">Doctors Signup/Login</a>
+
+                </div>
+                <div class="contact">
+                    <p class="pull-right"></p>
+                    <span class="header_phone_no header_text floating_text">
+                        <i class="fa fa-phone"></i>
+                        <b>"16484"</b>
+                    </span>
+                    <span class="header_time header_text floating_text"> (24/7 Service)</span>
+
+                </div>
+
+            </div>
         </div>
+    </section>
+    <section class="banner">
+        <div class="container">
+            <div class="banner_content">
+                <h1>Find Your Doctor</h1>
+            </div>
+            <div class="search_field">
 
-        <div class="form-group col-md-3">
-            <select class="form-control" id="SearchType" name="SearchType">
-                <option>Looking For....</option>
-                <option value="Doctor">Doctor</option>
-                <option value="Blood Donor">Blood Donor</option>
-                <option value="Hospital">Hospital</option>
-            </select>
-        </div>
+                <div class="opacity">
 
-        <div class="form-group col-md-3">
-            <div class="">
-                @*@Html.DropDownList("SpecialityId", null, "Select", htmlAttributes: new { @class = "form-control" })*@
-                @Html.DropDownList("SpecialityId", new SelectList(string.Empty, "Value", "Text"), "Select", htmlAttributes:new {@class = "form-control" })
-                @Html.ValidationMessageFor(model => model.SpecialityId, "", new { @class = "text-danger" })
+                    @using (Html.BeginForm("SearchParam", "Home", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+
+                    <div class="inputfield" style="float:left;">
+                        @Html.DropDownList("CityId", null, "Select City", htmlAttributes: new {id = "chamberId", @class="input1" })
+                        @Html.ValidationMessageFor(model => model.CityId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="inputfield" style="float:left; margin-left:10px;">
+                        <select id="SearchType" name="SearchType" class="input1">
+                            <option>Looking For....</option>
+                            <option value="Doctor">Doctor</option>
+                            <option value="Blood Donor">Blood Donor</option>
+                            <option value="Hospital">Hospital</option>
+                        </select>
+                    </div>
+                    <div class="inputfield" style="float:left; margin-left:10px;">
+                        @Html.DropDownList("SpecialityId", new SelectList(string.Empty, "Value", "Text"), "Select", htmlAttributes: new { @class = "input1" })
+                        @Html.ValidationMessageFor(model => model.SpecialityId, "", new { @class = "text-danger" })
+                    </div>
+
+                        <button class="searchbutton" type="submit"><i class="fa fa-search"></i></button>
+                    }
+                    </div>
+
             </div>
         </div>
 
-        <div class="form-group col-md-2">
-            <input type="submit" value="Search" class="btn btn-default" />
-        </div>
-    </div>
-}
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-@section Scripts{
+    </section>
+
+
+
+
+
+
+
+
+    @section Scripts{
         @Scripts.Render("~/bundles/jqueryval")
 
         <script>
