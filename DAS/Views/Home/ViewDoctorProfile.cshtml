@@ -1,0 +1,61 @@
+﻿@model DAS.Models.ViewModel.DoctorProfileVM
+@{
+    ViewBag.Title = "ViewDoctorProfile";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Doctor`s Data</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorList.DoctorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorList.DoctorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DoctorList.DoctorSpec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DoctorList.DoctorSpec)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Start Time
+            </th>
+            <th>
+                End Time
+            </th>
+        </tr>
+
+        @foreach (var item in Model.Schedules)
+        {
+            if (item.StartTime > DateTime.Now)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.StartTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EndTime)
+                </td>
+
+                <td>
+                    <a href="../../Home/ViewDoctorProfile?id" class="btn btn-primary">View Profile</a>
+                </td>
+            </tr>
+            }
+        }
+
+    </table>
+
+</div>
+

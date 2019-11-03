@@ -7,7 +7,7 @@ namespace DAS.Models.ViewModel
 {
     public class DoctorList
     {
-
+        public int DoctorId { get; set; }
         public string DoctorName { get; set; }
         public string DoctorDesignation { get; set; }
         public string DoctorSpec { get; set; }

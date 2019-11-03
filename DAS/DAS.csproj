@@ -219,6 +219,7 @@
     <Compile Include="Models\ViewModel\BloodDonorRegistration.cs" />
     <Compile Include="Models\ViewModel\ChamberVM.cs" />
     <Compile Include="Models\ViewModel\DoctorList.cs" />
+    <Compile Include="Models\ViewModel\DoctorProfileVM.cs" />
     <Compile Include="Models\ViewModel\DoctorRegistration.cs" />
     <Compile Include="Models\ViewModel\HospitalVM.cs" />
     <Compile Include="Models\ViewModel\Login.cs" />
@@ -315,6 +316,8 @@
     <Content Include="Views\Search\DoctorList.cshtml" />
     <Content Include="Views\Home\DoctorFilterResult.cshtml" />
     <Content Include="Views\Home\BloodDonorFilterResult.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
+    <Content Include="Views\Home\ViewDoctorProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -52,6 +52,7 @@ namespace DAS.Controllers
                             join h in db.Hospitals on c.HospitalID equals h.Id
                             select new DoctorList()
                             {
+                                DoctorId=d.ID,
                                 DoctorName = d.Name,
                                 DoctorDesignation = d.Designation,
                                 DoctorSpec = d.speciality.Name,
@@ -129,6 +130,39 @@ namespace DAS.Controllers
             var data = db.Specialities.Where(s => s.Id == id).FirstOrDefault();
             SpecName = data.Name;
             return SpecName;
+        }
+
+        public ActionResult ViewDoctorProfile(int? Id)
+        {
+            DoctorProfileVM dpv = new DoctorProfileVM();
+            if(Id != null)
+            {
+                var data = (from d in db.Doctors
+                            join c in db.Chambers on d.ID equals c.DoctorID
+                            join s in db.Schedules on c.ID equals s.ChamberID
+                            join h in db.Hospitals on c.HospitalID equals h.Id
+                            select new DoctorList()
+                            {
+                                DoctorId = d.ID,
+                                DoctorName = d.Name,
+                                DoctorDesignation = d.Designation,
+                                DoctorSpec = d.speciality.Name,
+                                HospitalName = h.Name,
+                                ChamberCity = h.City.Name,
+                                ChamberArea = h.Area.Name,
+                                Fee = s.FirstAppointmentFee,
+                            });
+                var Docor = data.Where(d => d.DoctorId == Id).FirstOrDefault();
+                dpv.DoctorList = Docor;
+
+
+                var Schedule = db.Schedules.Where(s => s.DoctorID == Id).ToList();   
+                dpv.Schedules = Schedule;
+
+                return View(dpv);
+
+            }
+            return View();
         }
     }
 }
