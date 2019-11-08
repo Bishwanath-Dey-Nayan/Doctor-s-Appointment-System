@@ -358,7 +358,6 @@ E:\PROJECTS\Doctor-s-Appointment-System\DAS\bin\System.Web.WebPages.Razor.xml
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\bin\Newtonsoft.Json.xml
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\bin\Antlr3.Runtime.pdb
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.csprojAssemblyReference.cache
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.initialCreate.resources
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.LoginModelCreated.resources
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.Specialityclassadded.resources
@@ -373,8 +372,12 @@ E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.chambermode
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.Fixedthescheduletable.resources
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.Fieldaddedinthescheduletable.resources
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.ScheduleDayRelModelAdded.resources
+E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.modificationinschedule.resources
+E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.NullabledatetimeinscheduleModel.resources
+E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.schemaadded.resources
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.csproj.GenerateResource.cache
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.csproj.CoreCompileInputs.cache
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.csproj.CopyComplete
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.dll
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.pdb
+E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.csprojAssemblyReference.cache

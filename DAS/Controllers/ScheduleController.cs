@@ -49,7 +49,8 @@ namespace DAS.Controllers
                     EndTime = model.EndTime,
                     FirstAppointmentFee = model.FirstAppointmentFee,
                     NextMeetingFee = model.NextMeetingFee,
-                    SlotNo = slots
+                    SlotNo = slots,
+                    AppointmentDate=model.AppointmentDate.Date
                 };
                 db.Schedules.Add(s);
                 db.SaveChanges();

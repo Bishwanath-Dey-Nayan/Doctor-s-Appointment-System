@@ -127,6 +127,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\AreaController.cs" />
     <Compile Include="Controllers\BloodDonorController.cs" />
     <Compile Include="Controllers\BloodGroupController.cs" />
@@ -198,6 +199,18 @@
     <Compile Include="Migrations\201910261457024_ScheduleDayRel Model Added.Designer.cs">
       <DependentUpon>201910261457024_ScheduleDayRel Model Added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911040233133_modification in schedule.cs" />
+    <Compile Include="Migrations\201911040233133_modification in schedule.Designer.cs">
+      <DependentUpon>201911040233133_modification in schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911040249523_Nullable datetime in scheduleModel.cs" />
+    <Compile Include="Migrations\201911040249523_Nullable datetime in scheduleModel.Designer.cs">
+      <DependentUpon>201911040249523_Nullable datetime in scheduleModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911040252409_schema added.cs" />
+    <Compile Include="Migrations\201911040252409_schema added.Designer.cs">
+      <DependentUpon>201911040252409_schema added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Area.cs" />
@@ -224,6 +237,7 @@
     <Compile Include="Models\ViewModel\HospitalVM.cs" />
     <Compile Include="Models\ViewModel\Login.cs" />
     <Compile Include="Models\ViewModel\PaitentHistoryVM.cs" />
+    <Compile Include="Models\ViewModel\ScheduleDetails.cs" />
     <Compile Include="Models\ViewModel\ScheduleVM.cs" />
     <Compile Include="Models\ViewModel\SearchParam.cs" />
     <Compile Include="MyRoleProvider.cs" />
@@ -318,6 +332,7 @@
     <Content Include="Views\Home\BloodDonorFilterResult.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Home\ViewDoctorProfile.cshtml" />
+    <Content Include="Views\Appointment\BookAppointment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -377,6 +392,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910261457024_ScheduleDayRel Model Added.resx">
       <DependentUpon>201910261457024_ScheduleDayRel Model Added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911040233133_modification in schedule.resx">
+      <DependentUpon>201911040233133_modification in schedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911040249523_Nullable datetime in scheduleModel.resx">
+      <DependentUpon>201911040249523_Nullable datetime in scheduleModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911040252409_schema added.resx">
+      <DependentUpon>201911040252409_schema added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

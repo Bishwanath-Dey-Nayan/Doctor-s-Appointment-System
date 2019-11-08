@@ -13,6 +13,11 @@ namespace DAS.Models.ViewModel
         public int ChamberID { get; set; }
 
         [Required]
+        [Display(Name ="Appointment Date")]
+        [DataType(DataType.Date)]
+        public DateTime AppointmentDate { get; set; }
+
+        [Required]
         [Display(Name = "Starts From")]
         [DataType(DataType.Time)]
         public DateTime StartTime { get; set; }
