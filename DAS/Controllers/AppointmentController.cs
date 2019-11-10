@@ -51,13 +51,27 @@ namespace DAS.Controllers
                 {
                     P_Name = pc.Name,
                     Age = pc.Age.ToString(),
-                    Mobile = pc.MobileNo,
+                    Mobile = pc.PersonalMobileNo,
                     Prev_visit = pc.Pre_visited,
                     DoctorID = Data.DoctorId,
                     ChamberID = Data.ChamberId,
-                    SechduleId = Data.ScheduleId
+                    SechduleId = Data.ScheduleId,
+                    Email = pc.Email
 
                 };
+                db.Appointments.Add(ap);
+                db.SaveChanges();
+                DAS.Models.TransactionDetails td = new Models.TransactionDetails()
+                {
+                    AppointmentId = ap.ID,
+                    MobileNo = pc.MobileNo,
+                    TransactionID = pc.Bkash_Tr_Code,
+                    isconfirmed = false,
+                    date = DateTime.Now
+                };
+                db.TransactionDetails.Add(td);
+                db.SaveChanges();
+                return View("ConfirmMessage");
             }
             return View();
         }

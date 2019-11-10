@@ -13,6 +13,7 @@ namespace DAS
         public string P_Name { get; set; }
         public string Age { get; set; }
         public string Mobile { get; set; }
+        public string Email { get; set; }
         public bool Prev_visit { get; set; }
 
         public int DoctorID { get; set; }

@@ -211,6 +211,10 @@
     <Compile Include="Migrations\201911040252409_schema added.Designer.cs">
       <DependentUpon>201911040252409_schema added.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911101736100_TransactionDetails model and modified Appointment.cs" />
+    <Compile Include="Migrations\201911101736100_TransactionDetails model and modified Appointment.Designer.cs">
+      <DependentUpon>201911101736100_TransactionDetails model and modified Appointment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Area.cs" />
@@ -228,6 +232,7 @@
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\ScheduleDayRel.cs" />
     <Compile Include="Models\Speciality.cs" />
+    <Compile Include="Models\TransactionDetails.cs" />
     <Compile Include="Models\ViewModel\BloodDonorList.cs" />
     <Compile Include="Models\ViewModel\BloodDonorRegistration.cs" />
     <Compile Include="Models\ViewModel\ChamberVM.cs" />
@@ -338,6 +343,7 @@
     <Content Include="Views\Doctor\DoctorFilterResult.cshtml" />
     <Content Include="Views\Appointment\ConfirmAppointment.cshtml" />
     <Content Include="Views\Appointment\paymentForm.cshtml" />
+    <Content Include="Views\Appointment\ConfirmMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -406,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911040252409_schema added.resx">
       <DependentUpon>201911040252409_schema added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911101736100_TransactionDetails model and modified Appointment.resx">
+      <DependentUpon>201911101736100_TransactionDetails model and modified Appointment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -24,6 +24,7 @@ namespace DAS
         public DbSet<Schedule> Schedules { get; set; }
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<ConfirmedAppointment> ConfirmedAppointments { get; set; }
+        public DbSet<TransactionDetails> TransactionDetails { get; set; }
         public DbSet<PaitentHistory> PaitentHistorys { get; set; }
         public DbSet<Login> Logins { get; set; }
         public DbSet<BloodDonor> BloodDonors { get; set; }
