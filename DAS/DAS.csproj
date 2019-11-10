@@ -333,6 +333,8 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Home\ViewDoctorProfile.cshtml" />
     <Content Include="Views\Appointment\BookAppointment.cshtml" />
+    <Content Include="Views\Home\HospitalFilterResult.cshtml" />
+    <Content Include="Views\Doctor\DoctorFilterResult.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

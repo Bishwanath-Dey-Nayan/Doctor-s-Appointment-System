@@ -1,0 +1,53 @@
+﻿@model IEnumerable<DAS.Models.Hospital>
+
+@{
+    ViewBag.Title = "Hospital List";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Hospitals List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Area.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HospitalType.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HospitalType.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalAddress)
+        </td>
+        <td>
+            <a href="../../Doctor/DoctorByHospital?HospitalId=@item.Id" class="btn btn-success">View Doctors</a>
+        </td>
+    </tr>
+}
+
+</table>

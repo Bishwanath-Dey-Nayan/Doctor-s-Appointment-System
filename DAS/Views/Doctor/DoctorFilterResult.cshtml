@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DAS.Models.ViewModel.DoctorList>
+
+@{
+    ViewBag.Title = "Doctor";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<h2>Doctor List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorDesignation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorSpec)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HospitalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChamberCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChamberArea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fee)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorDesignation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DoctorSpec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HospitalName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChamberCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChamberArea)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fee)
+            </td>
+            <td>
+                <a href="../../Home/ViewDoctorProfile?id=@item.DoctorId" class="btn btn-primary">View Profile</a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -86,6 +86,16 @@ namespace DAS.Controllers
                     TempData["filterBloodData"] = filterData;
                     return RedirectToAction("BloodDonorFilterResult",filterData);
                 }
+                if(sp.SearchType == "Hospital")
+                {
+                    filterData = (from h in db.Hospitals
+                                  where h.HospitalTypeId == sp.SpecialityId &&
+                                  h.CityId == sp.CityId
+                                  select h
+                                  ).ToList();
+                    TempData["filterHospitalData"] = filterData;
+                    return RedirectToAction("HospitalFilterResult");
+                }
             }
              return View();
             
@@ -102,6 +112,11 @@ namespace DAS.Controllers
         {
             var bd = TempData["filterBloodData"] as List<BloodDonorList>;
             return View(bd);
+        }
+        public ActionResult HospitalFilterResult()
+        {
+            var h = TempData["filterHospitalData"];
+            return View(h);
         }
 
         public ActionResult ShowAdmin()
