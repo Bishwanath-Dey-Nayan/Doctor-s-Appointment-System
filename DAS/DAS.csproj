@@ -237,6 +237,7 @@
     <Compile Include="Models\ViewModel\HospitalVM.cs" />
     <Compile Include="Models\ViewModel\Login.cs" />
     <Compile Include="Models\ViewModel\PaitentHistoryVM.cs" />
+    <Compile Include="Models\ViewModel\PaymentConfirmationVM.cs" />
     <Compile Include="Models\ViewModel\ScheduleDetails.cs" />
     <Compile Include="Models\ViewModel\ScheduleVM.cs" />
     <Compile Include="Models\ViewModel\SearchParam.cs" />
@@ -335,6 +336,8 @@
     <Content Include="Views\Appointment\BookAppointment.cshtml" />
     <Content Include="Views\Home\HospitalFilterResult.cshtml" />
     <Content Include="Views\Doctor\DoctorFilterResult.cshtml" />
+    <Content Include="Views\Appointment\ConfirmAppointment.cshtml" />
+    <Content Include="Views\Appointment\paymentForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

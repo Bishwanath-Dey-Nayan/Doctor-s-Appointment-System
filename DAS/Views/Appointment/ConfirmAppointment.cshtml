@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Confirm Appointment";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+
+<div class="container">
+    <div class="col-md-12">
+        <h1>BKASH PAYMENT</h1>
+        <h2 class="alert-danger">To confirm the appointment you have to pay 50Tk.</h2>
+        
+    </div>
+    <div class="col-md-6">
+        <h3 class="alert-danger">Please use follwing steps to pay now:</h3>
+        <ul>
+            <li>Go to bKash Menu by dialing *247#</li>
+            <li>Choose 'Payment' option by pressing '3'</li>
+            <li>Enter our BKash personal Account number : 01730791523</li>
+            <li>Enter the amount</li>
+            <li>Enter the reference Code that is provided above</li>
+            <li>Enter your bKash Mobile Menu PIN to confirm the transaction</li>
+            <li> Confirm us about your bKash payment By filling the form on the right side </li>
+        </ul>
+    </div>
+    <div class="col-md-6">
+        @Html.Partial("paymentForm");
+    </div>
+</div>
+
