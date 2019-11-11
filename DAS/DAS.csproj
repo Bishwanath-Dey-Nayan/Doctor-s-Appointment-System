@@ -140,6 +140,7 @@
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SpecialitieController.cs" />
+    <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +247,7 @@
     <Compile Include="Models\ViewModel\ScheduleDetails.cs" />
     <Compile Include="Models\ViewModel\ScheduleVM.cs" />
     <Compile Include="Models\ViewModel\SearchParam.cs" />
+    <Compile Include="Models\ViewModel\TransactionVM.cs" />
     <Compile Include="MyRoleProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -344,6 +346,8 @@
     <Content Include="Views\Appointment\ConfirmAppointment.cshtml" />
     <Content Include="Views\Appointment\paymentForm.cshtml" />
     <Content Include="Views\Appointment\ConfirmMessage.cshtml" />
+    <Content Include="Views\Transaction\PendingTransaction.cshtml" />
+    <Content Include="Views\Transaction\ConfirmedTransaction.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

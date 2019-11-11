@@ -1,0 +1,106 @@
+﻿
+@model IEnumerable<DAS.Models.ViewModel.TransactionVM>
+
+<head>
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#example2').dataTable();
+            console.log("hello");
+        });
+    </script>
+</head>
+    <h2>Confirmed Transaction</h2>
+
+    <table id="example2" class="display" style="width:80%">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AppointmentId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </th>
+                <th>
+                    Transaction Code
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.P_Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BkashMobileNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DoctorID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChamberID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SechduleId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DoctorName)
+                </th>
+                
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AppointmentId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Transactioncode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.P_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BkashMobileNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoctorID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChamberID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SechduleId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DoctorName)
+                    </td>
+                   
+                </tr>
+            </tbody>
+        }
+
+    </table>
+
