@@ -74,6 +74,7 @@
                 <option value="Friday">Friday</option>
                 <option value="Saturday">Saturday</option>
             </select>
+            <ul id="friendsList"></ul>
         </div>
         <button class="col-md-1" type="button" style="margin-right:0px;" onclick="selectDays()">Select</button>
     </div>
@@ -102,11 +103,22 @@
             NextMeetingFee: "",
             days:[]
         }
+      
+
         function selectDays() {
             var x = document.getElementById("select").value;
             obj.days.push(x);
+            for (var i = 0; i < obj.days.length; i++) {
+                var name = names[i];
+                var li = document.createElement('li');
+                li.innerHTML = name;
+                document.getElementById('friendsList').appendChild(li);
+            }
             console.log(obj);
         }
+
+      
+
         function save() {
             obj.ChamberID = document.getElementById("chamberId").value;
             obj.StartTime = document.getElementById("starttime").value;

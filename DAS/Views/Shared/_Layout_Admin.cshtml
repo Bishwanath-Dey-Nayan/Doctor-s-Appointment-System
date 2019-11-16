@@ -26,10 +26,12 @@
                     <li>@Html.ActionLink("Add Area", "Index", "Area")</li>
                     <li>@Html.ActionLink("Add Blood Group", "Index", "BloodGroup")</li>
                     <li>@Html.ActionLink("Add Hospital Type", "Index", "HospitalType")</li>
+                    <li>@Html.ActionLink("Pending Transaction", "PendingTransaction", "Transaction")</li>
+                    <li>@Html.ActionLink("Confirmed Transaction", "ConfirmedTransaction", "Transaction")</li>
 
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Login", "Login", "Account")</li>
+                        <li>@Html.ActionLink("Log out", "Logout", "Account")</li>
                     </ul>
                 </ul>
 </div>
@@ -42,8 +44,6 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

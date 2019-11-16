@@ -37,6 +37,9 @@ namespace DAS.Controllers
                 db.SaveChanges();
                 return RedirectToAction("ShowAdmin","Home");
             }
+            ViewBag.CityId = new SelectList(db.Cities, "ID", "Name");
+            ViewBag.AreaId = new SelectList(db.Areas, "ID", "Name");
+            ViewBag.HospitalTypeId = new SelectList(db.HospitalTypes, "Id", "Name");
             return View(hvm);
         }
     }

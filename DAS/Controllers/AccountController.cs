@@ -50,7 +50,7 @@ namespace DAS.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Create", "Doctor");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

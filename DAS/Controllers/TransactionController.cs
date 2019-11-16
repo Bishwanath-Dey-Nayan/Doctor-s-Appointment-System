@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 
@@ -62,6 +64,49 @@ namespace DAS.Controllers
                                    }
                                 ).ToList();
             return View(TransactionData);
+        }
+
+        public ActionResult Confirm(int? transId)
+        {
+            var data = db.TransactionDetails.Where(t => t.Id == transId).SingleOrDefault();
+            data.isconfirmed = true;
+            var EmailData = db.Appointments.Where(a => a.ID == data.AppointmentId).SingleOrDefault();
+            SendverificationLinkEmail(EmailData.Email);
+            db.SaveChanges();
+            return View("ConfirmedTransaction");
+        }
+
+        [NonAction]
+        public void SendverificationLinkEmail(string emailID)
+        {
+            var fromEmail = new MailAddress("bishwanathdeynayan@gmail.com", "Doctors Point");
+            var toEmail = new MailAddress(emailID);
+            var fromPassword = "n01682616787a";
+
+            string subject = "";
+            string body = "";
+                subject = "Transaction confirmation Mail";
+                body = "<br/><br/>We are here  to tell you that the transaction that you made today is successfull";
+         
+            var smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
+                EnableSsl = true,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(fromEmail.Address, fromPassword),
+                
+            };
+            using (var Message = new MailMessage(fromEmail, toEmail)
+            {
+                Subject = subject,
+                Body = body,
+                IsBodyHtml = true
+            }
+            )
+                smtp.Send(Message);
+
         }
     }
 }
