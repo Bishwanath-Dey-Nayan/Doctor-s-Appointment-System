@@ -24,6 +24,7 @@ namespace DAS.Controllers
                            ChamberCity = h.City.Name,
                            ChamberArea = h.Area.Name,
                            Fee = s.FirstAppointmentFee,
+                           Email = d.Email
                        }).ToList();
             return View(data);
         }

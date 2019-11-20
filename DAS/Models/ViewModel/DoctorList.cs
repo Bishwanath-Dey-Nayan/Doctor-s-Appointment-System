@@ -16,6 +16,7 @@ namespace DAS.Models.ViewModel
         public string ChamberArea { get; set; }
         public double Fee { get; set; }
         public int HospitalId { get; set; }
+        public string Email { get; set; }
 
     }
 }

@@ -38,7 +38,7 @@
 
         @foreach (var item in Model.Schedules)
         {
-            if (item.StartTime > DateTime.Now)
+            if (item.AppointmentDate > DateTime.Now)
             {
             <tr>
                 <td>

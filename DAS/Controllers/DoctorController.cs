@@ -48,7 +48,7 @@ namespace DAS.Controllers
                 db.Logins.Add(l);
 
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return View();
 
 
             }
@@ -129,7 +129,10 @@ namespace DAS.Controllers
             return View(dc);
         }
 
-
+        public ActionResult Index1()
+        {
+            return View(db.Doctors.ToList());
+        }
 
     }
 }

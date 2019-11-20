@@ -12,6 +12,12 @@
         $(document).ready(function () {
             $('#example1').dataTable();
             console.log("hello");
+            $('#column3_search').on('keyup', function () {
+                table
+                    .columns(3)
+                    .search(this.value)
+                    .draw();
+            });
         });
     </script>
 </head>

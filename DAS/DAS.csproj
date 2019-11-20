@@ -348,6 +348,7 @@
     <Content Include="Views\Appointment\ConfirmMessage.cshtml" />
     <Content Include="Views\Transaction\PendingTransaction.cshtml" />
     <Content Include="Views\Transaction\ConfirmedTransaction.cshtml" />
+    <Content Include="Views\Doctor\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

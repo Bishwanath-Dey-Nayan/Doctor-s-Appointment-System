@@ -1,4 +1,5 @@
 ﻿using DAS.Models.ViewModel;
+using Microsoft.Ajax.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,7 +65,7 @@ namespace DAS.Controllers
                 if (sp.SearchType == "Doctor")
                 {
                     var SpecilityName = GetDoctorSpec(sp.SpecialityId);
-                    filterData = data.Where(d => d.ChamberCity == cityName && d.DoctorSpec == SpecilityName).ToList();
+                    filterData = data.Where(d => d.ChamberCity == cityName && d.DoctorSpec == SpecilityName).DistinctBy(x => x.DoctorId).ToList();
                     TempData["filteredData"] = filterData;
                     return RedirectToAction("DoctorFilterResult");
 

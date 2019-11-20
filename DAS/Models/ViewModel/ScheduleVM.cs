@@ -35,6 +35,5 @@ namespace DAS.Models.ViewModel
         [Display(Name = "Next Meeting Fee")]
         public string NextMeetingFee { get; set; }
 
-        public List<string> days { get; set; }
     }
 }

@@ -55,18 +55,16 @@ namespace DAS.Controllers
                 db.Schedules.Add(s);
                 db.SaveChanges();
 
-                for(int i=0;i<model.days.Count;i++)
-                {
-                    DAS.Models.ScheduleDayRel sd = new Models.ScheduleDayRel()
-                    {
-                        ScheduleId = s.ID,
-                        DayName = model.days[i]
-                    };
-                    db.ScheduleDayRels.Add(sd);
-                    db.SaveChanges();
-                }
-
-                //return Json(0,JsonRequestBehavior.AllowGet);
+                //for(int i=0;i<model.days.Count;i++)
+                //{
+                //    DAS.Models.ScheduleDayRel sd = new Models.ScheduleDayRel()
+                //    {
+                //        ScheduleId = s.ID,
+                //        DayName = model.days[i]
+                //    };
+                //    db.ScheduleDayRels.Add(sd);
+                //    db.SaveChanges();
+                //}
                 return Json(Url.Action("Index", "Schedule"));
                 
                 

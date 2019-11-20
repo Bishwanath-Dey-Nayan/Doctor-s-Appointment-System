@@ -1,8 +1,8 @@
 ﻿@model IEnumerable<DAS.Models.ViewModel.DoctorList>
 
 @{
-    ViewBag.Title = "DoctorList";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Doctor List";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
 }
 
 <h2>DoctorList</h2>
@@ -28,7 +28,7 @@
             Area
         </th>
         <th>
-            Fee
+            Email
         </th>
         <th></th>
     </tr>
@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.ChamberArea)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Fee)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
 
         </tr>
