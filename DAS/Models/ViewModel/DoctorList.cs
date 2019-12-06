@@ -17,6 +17,7 @@ namespace DAS.Models.ViewModel
         public double Fee { get; set; }
         public int HospitalId { get; set; }
         public string Email { get; set; }
+        public string Gender { get; set; }
 
     }
 }

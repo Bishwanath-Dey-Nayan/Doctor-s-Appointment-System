@@ -1,0 +1,63 @@
+﻿@model IEnumerable<DAS.Appointment>
+
+@{
+    ViewBag.Title = "AppointmentList";
+    Layout = "~/Views/Shared/_Layout_Doctor.cshtml";
+}
+
+<h2>Appointment List</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Chamber Name
+        </th>
+        <th>
+            Paitent Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prev_visit)
+        </th>
+
+        <th>
+            Appointment Date
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Chamber.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.P_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Age)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prev_visit)
+        </td>
+
+        <th>
+            @Html.DisplayFor(modelItem => item.Schedule.AppointmentDate)
+        </th>
+    </tr>
+}
+
+</table>

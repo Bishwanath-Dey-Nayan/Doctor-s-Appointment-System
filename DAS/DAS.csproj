@@ -137,6 +137,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HospitalController.cs" />
     <Compile Include="Controllers\HospitalTypeController.cs" />
+    <Compile Include="Controllers\PackageController.cs" />
+    <Compile Include="Controllers\PackTypeController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\SpecialitieController.cs" />
@@ -216,6 +218,10 @@
     <Compile Include="Migrations\201911101736100_TransactionDetails model and modified Appointment.Designer.cs">
       <DependentUpon>201911101736100_TransactionDetails model and modified Appointment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911231512403_Service entity.cs" />
+    <Compile Include="Migrations\201911231512403_Service entity.Designer.cs">
+      <DependentUpon>201911231512403_Service entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Area.cs" />
@@ -229,11 +235,14 @@
     <Compile Include="Models\Hospital.cs" />
     <Compile Include="Models\HospitalType.cs" />
     <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Package.cs" />
+    <Compile Include="Models\PackType.cs" />
     <Compile Include="Models\PaitentHistory.cs" />
     <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\ScheduleDayRel.cs" />
     <Compile Include="Models\Speciality.cs" />
     <Compile Include="Models\TransactionDetails.cs" />
+    <Compile Include="Models\ViewModel\AppointmentListVMDoctor.cs" />
     <Compile Include="Models\ViewModel\BloodDonorList.cs" />
     <Compile Include="Models\ViewModel\BloodDonorRegistration.cs" />
     <Compile Include="Models\ViewModel\ChamberVM.cs" />
@@ -252,11 +261,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\admin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Image\Banner.jpg" />
+    <Content Include="Content\Image\Doctor_Female_Logo.png" />
+    <Content Include="Content\Image\Doctor_Male_Logo.png" />
     <Content Include="Content\Image\logo.png" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -349,6 +361,20 @@
     <Content Include="Views\Transaction\PendingTransaction.cshtml" />
     <Content Include="Views\Transaction\ConfirmedTransaction.cshtml" />
     <Content Include="Views\Doctor\Index1.cshtml" />
+    <Content Include="Views\Doctor\AppointmentList.cshtml" />
+    <Content Include="Views\Doctor\AppointmentList1.cshtml" />
+    <Content Include="Views\Package\Create.cshtml" />
+    <Content Include="Views\Package\Delete.cshtml" />
+    <Content Include="Views\Package\Details.cshtml" />
+    <Content Include="Views\Package\Edit.cshtml" />
+    <Content Include="Views\Package\Index.cshtml" />
+    <Content Include="Views\PackType\Create.cshtml" />
+    <Content Include="Views\PackType\Delete.cshtml" />
+    <Content Include="Views\PackType\Details.cshtml" />
+    <Content Include="Views\PackType\Edit.cshtml" />
+    <Content Include="Views\PackType\Index.cshtml" />
+    <Content Include="Views\Home\PackageIndex.cshtml" />
+    <Content Include="Views\Shared\AdminLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -420,6 +446,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911101736100_TransactionDetails model and modified Appointment.resx">
       <DependentUpon>201911101736100_TransactionDetails model and modified Appointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911231512403_Service entity.resx">
+      <DependentUpon>201911231512403_Service entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DAS.Models.Package>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Care Pack</h2>
+
+<div class="col-md-12">
+    @{
+        foreach (var item in Model)
+        {
+            <div class="col-md-3" style="float:left;height:850px;margin-top:20px">
+                <h3 style=" background-color:#0083CA;color:white">Package Benefits</h3>
+                <h5 style="background-color:#3EC7F4;color:white">Special Price for Online Purchase</h5>
+                <p>24/7 Doctor Consultation Over the Phone</p>
+                <hr />
+                <p>Doctor Appointment Service</p>
+                <hr />
+                <p>Proactive Counselling by a Doctor Over the Phone</p>
+                <hr />
+                <p>Sample Collection & Report Delivery</p>
+                <hr />
+                <p>Free Medicine Home Delivery</p>
+                <hr />
+                <p>Medicine Intake Reminder Through SMS</p>
+                <hr />
+                <p>Pick & Drop for Doctor Visit and Tests</p>
+                <hr />
+                <p>Hospitalization Cashback</p>
+                <hr />
+                <p>Out Patient Cashback</p>
+                <hr />
+                <p>Life Insurance Coverage</p>
+                <hr />
+                <p>Emergency and Ambulance Service Information</p>
+                <hr />
+            </div>
+            <div class="col-md-2" style="float:left;height:850px;background-color: seashell;margin-right:70px;margin-top:20px;">
+                <h3 style=" background-color:#404D6C;color:white">@item.Name</h3>
+                <h5 style="background-color:#506295;color:white">@item.Amount BDT/Year</h5>
+                <p>@item.consutation_over_phone &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;</p>
+                <hr />
+                <p>@item.AppointmentService</p>
+                <hr />
+                <p>@item.counselling_over_phone<br />&nbsp;</p>
+                <hr />
+                <p>@item.sample_collection_report_del</p>
+                <hr />
+                <p>@item.free_medicine_del</p>
+                <hr />
+                <p>@item.med_intake_reminder</p>
+                <hr />
+                <p>@item.pick_drop_doc_visit</p>
+                <hr />
+                <p>@item.hospitalization_cashback</p>
+                <hr />
+                <p>@item.out_paitent_cashback</p>
+                <hr />
+                <p>@item.Life_insurance</p>
+                <hr />
+                <p>@item.Emergency_ambulance_serv<br />&nbsp;</p>
+                <p><a class="btn btn-primary" style="margin-top: 10px;width: 146px;">Subscribe</a> </p>
+                <hr />
+            </div>
+        }
+    }
+
+</div>
+

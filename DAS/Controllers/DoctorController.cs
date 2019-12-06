@@ -48,12 +48,13 @@ namespace DAS.Controllers
                 db.Logins.Add(l);
 
                 db.SaveChanges();
+                ViewBag.SpecialityId = new SelectList(db.Specialities, "Id", "Name");
                 return View();
 
 
             }
             ViewBag.SpecialityId = new SelectList(db.Specialities, "Id", "Name");
-            return View(dr);
+            return View();
 
         }
 
@@ -132,6 +133,28 @@ namespace DAS.Controllers
         public ActionResult Index1()
         {
             return View(db.Doctors.ToList());
+        }
+
+        public ActionResult AppointmentList1()
+        { 
+            var DoctorEmail = Session["UserEmail"];
+            var docdata = db.Doctors.Where(x => x.Email == DoctorEmail).FirstOrDefault();
+            var data = (from a in db.Appointments 
+                        join s in db.Schedules on a.SechduleId equals s.ID
+                        where a.DoctorID == docdata.ID
+                        select new AppointmentListVMDoctor()
+                        {
+                            ChamberId = a.ChamberID,
+                            ChamberName = a.Chamber.Name,
+                            PaitentName = a.P_Name,
+                            Age=a.Age,
+                            Mobile = a.Mobile,
+                            Email = a.Email,
+                            pre_visit = a.Prev_visit,
+                            AppointmentDate=s.AppointmentDate,
+                        }
+                        ).ToList();
+            return View(data);
         }
 
     }

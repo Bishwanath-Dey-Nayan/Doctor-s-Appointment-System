@@ -381,4 +381,4 @@ E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.csproj.CopyComplete
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.dll
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.pdb
 E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.TransactionDetailsmodelandmodifiedAppointment.resources
-E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.csprojAssemblyReference.cache
+E:\PROJECTS\Doctor-s-Appointment-System\DAS\obj\Debug\DAS.Migrations.Serviceentity.resources

@@ -81,6 +81,7 @@ namespace DAS.Controllers
                                       Name = b.Name,
                                       BloodGroup=b.BloodGroup.Name,
                                       MobileNo = b.MobileNo,
+                                      Area = b.Area.Name,
                                       Address = b.AdditionalAddress
                                   }
                                   ).ToList();
@@ -167,6 +168,7 @@ namespace DAS.Controllers
                                 ChamberCity = h.City.Name,
                                 ChamberArea = h.Area.Name,
                                 Fee = s.FirstAppointmentFee,
+                                Gender = d.Gender
                             });
                 var Docor = data.Where(d => d.DoctorId == Id).FirstOrDefault();
                 dpv.DoctorList = Docor;
@@ -179,6 +181,10 @@ namespace DAS.Controllers
 
             }
             return View();
+        }
+        public ActionResult PackageIndex()
+        {
+            return View(db.Packages.ToList());
         }
     }
 }

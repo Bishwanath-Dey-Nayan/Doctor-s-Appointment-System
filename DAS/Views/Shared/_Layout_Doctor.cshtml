@@ -16,13 +16,17 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Doctor`s Point", "ShowDoctor", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Add Chamber", "AddChamber", "Chamber")</li>
                     <li>@Html.ActionLink("Paitent History", "PaitentHistory", "Doctor")</li>
                     <li>@Html.ActionLink("Schedule", "CreateSchedule", "Schedule")</li>
+                    <li>@Html.ActionLink("Appointment", "AppointmentList1", "Doctor")</li>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>@Html.ActionLink("Log out", "Logout", "Account")</li>
+                    </ul>
 
 </div>
         </div>

@@ -5,10 +5,11 @@
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-<h2>DoctorFilterResult</h2>
+<h2 style="text-align:center;">Doctor Filter Result</h2>
+<hr />
 
 <table class="table">
-    <tr>
+    @*<tr>
         <th>
             @Html.DisplayNameFor(model => model.DoctorName)
         </th>
@@ -31,35 +32,26 @@
             @Html.DisplayNameFor(model => model.Fee)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.DoctorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DoctorDesignation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DoctorSpec)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HospitalName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChamberCity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ChamberArea)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fee)
-        </td>
-        <td>
-            <a href="../../Home/ViewDoctorProfile?id=@item.DoctorId" class="btn btn-primary">View Profile</a>
-        </td>
-    </tr>
+    <div class="col-md-12" style="height:100px; background-color:#bab4b4; border-radius:30px;margin-bottom:20px;">
+        <div class="col-md-4" style="margin-top:2%;">
+           Name: @item.DoctorName <br />
+           Designation: @item.DoctorDesignation <br />
+           Specilization: @item.DoctorSpec
+        </div>
+        <div class="col-md-5" style="margin-top:2%;">
+            Hospital Name: @item.HospitalName <br />
+            City: @item.ChamberCity <br />
+            Appointment Fee:@item.Fee
+        </div>
+        <div class="col-md-3">
+            <a href="../../Home/ViewDoctorProfile?id=@item.DoctorId" class="btn btn-primary" style="margin-left:40%;margin-top:12%">View Profile</a>
+        </div>
+    </div>
+    <br />
+    <hr />
+    
 }
 
-</table>

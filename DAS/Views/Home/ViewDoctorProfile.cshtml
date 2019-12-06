@@ -4,58 +4,79 @@
     Layout = "~/Views/Shared/_LayoutHome.cshtml";
 }
 
-<h2>Doctor`s Data</h2>
-<div>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.DoctorList.DoctorName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoctorList.DoctorName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DoctorList.DoctorSpec)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DoctorList.DoctorSpec)
-        </dd>
-
-    </dl>
-</div>
-<div>
-    <table class="table">
-        <tr>
-            <th>
-                Start Time
-            </th>
-            <th>
-                End Time
-            </th>
-        </tr>
-
-        @foreach (var item in Model.Schedules)
-        {
-            if (item.AppointmentDate > DateTime.Now)
-            {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.StartTime)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EndTime)
-                </td>
-
-                <td>
-                    <a href="../../Appointment/BookAppointment?id=@item.ID" class="btn btn-primary">Book Appointment</a>
-                </td>
-            </tr>
+<div class="col-md-12">
+    <div class="col-md-12" style="background-color:#51BFEC;height:280px;">
+        <div style="text-align:center;">
+            @{ if (Model.DoctorList.Gender == "Male")
+                {
+                    <img src="~/Content/Image/Doctor_Male_Logo.png" style="width:150px;height:150px;" />
+                }
+                else
+                {
+                    <img src="~/Content/Image/Doctor_Female_Logo.png" style="width:150px;height:150px;" />
+                }
             }
-        }
+            <br />
+            <p style="font-size:30px;">@Model.DoctorList.DoctorName</p>
+            <p style="font-size:20px;">@Model.DoctorList.DoctorDesignation</p>
+            <p style="font-size:15px;">@Model.DoctorList.DoctorSpec</p>
 
-    </table>
+        </div>
+        <div class="col-md-12" style="margin-top:20px;height:200px;">
+            <div class="col-md-4" style="background-color:#51BFEC;box-shadow: 20px 20px 50px 15px grey;height:100px;">
+                <p style="text-align:center;font-size:25px;">Specialist in</p>
+                <p style="text-align:center;font-size:30px;">@Model.DoctorList.DoctorSpec</p>
+            </div>
+            <div class="col-md-6 col-md-offset-2" style="background-color:#51BFEC;box-shadow: 20px 20px 50px 15px grey;">
+                <table class="table">
+                    <tr>
+                        <th>
+                            Appointment Date
+                        </th>
+                        <th>
+                            Chamber
+                        </th>
+                        <th>
+                            Start Time
+                        </th>
+                        <th>
+                            End Time
+                        </th>
+                    </tr>
 
+                    @foreach (var item in Model.Schedules)
+                    {
+                        if (item.AppointmentDate > DateTime.Now)
+                        {
+                    <tr>
+                        <td>
+                          @item.AppointmentDate
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Chamber.Hospital.Name)
+                        </td>
+
+                        <td>
+                            @item.StartTime
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EndTime)
+                        </td>
+
+                        <td>
+                            <a href="../../Appointment/BookAppointment?id=@item.ID" class="btn btn-primary">Book Appointment</a>
+                        </td>
+                    </tr>
+                        }
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
+<br />
+<br />
+<br />
+<br />
 

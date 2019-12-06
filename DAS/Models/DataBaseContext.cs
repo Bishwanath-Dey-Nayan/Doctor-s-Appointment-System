@@ -28,6 +28,8 @@ namespace DAS
         public DbSet<PaitentHistory> PaitentHistorys { get; set; }
         public DbSet<Login> Logins { get; set; }
         public DbSet<BloodDonor> BloodDonors { get; set; }
+        public DbSet<PackType> PackTypes { get; set; }
+        public DbSet<Package> Packages { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
 

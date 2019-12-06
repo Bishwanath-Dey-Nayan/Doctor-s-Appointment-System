@@ -1,0 +1,131 @@
+﻿@model DAS.Models.Package
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Package</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.consutation_over_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.consutation_over_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppointmentService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppointmentService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.counselling_over_phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.counselling_over_phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sample_collection_report_del)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sample_collection_report_del)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.free_medicine_del)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.free_medicine_del)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.med_intake_reminder)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.med_intake_reminder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pick_drop_doc_visit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pick_drop_doc_visit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emergency_ambulance_serv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emergency_ambulance_serv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hospitalization_cashback)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hospitalization_cashback)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.out_paitent_cashback)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.out_paitent_cashback)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Life_insurance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Life_insurance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pack_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pack_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

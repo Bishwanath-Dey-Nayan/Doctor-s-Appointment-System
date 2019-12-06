@@ -11,6 +11,7 @@ namespace DAS.Models.ViewModel
         public string BloodGroup { get; set; }
         public string MobileNo { get; set; }
         public string Address { get; set;}
+        public string Area { get; set; }
         
     }
 }
